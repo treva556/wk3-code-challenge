@@ -22,18 +22,18 @@ function fetchData() {
                img.src =
             films.poster;
                let showTime =
-            document.getElementById("showTime");
+            document.getElementById("showingTime");
               showTime.textContent =
             films.showtime;
             let runTime =
-            document.getElementById("runTime");
+            document.getElementById("runningTime");
               runTime.textContent =
             `${films.runtime} Minutes`;
             let tickets =
           document.querySelector("div#ticket-counter");
                 tickets.textContent = films["capacity"] - films["tickets_sold"]
             })
-            document.querySelector("ul#films").appendChild(li)
+            document.querySelector("ul#Movies").appendChild(li)
         })
     })
     }
@@ -45,8 +45,8 @@ function baseMovies() { fetch(baseUrl)
     .then(data => {
         document.querySelector('h2#movieTitle').textContent = data[0]['title']
         document.querySelector("img#imageHolder").setAttribute("src",`${data[0]["poster"]}`)
-        document.querySelector("div#showTime").textContent = data[0]["showtime"]
-        document.querySelector("div#runTime").textContent = `${data[0]["runtime"]} Minutes`
+        document.querySelector("div#showingTime").textContent = data[0]["showing time"]
+        document.querySelector("div#runnnTime").textContent = `${data[0]["runtime"]} Minutes`
         document.querySelector("ul#films").firstElementChild.remove()
         document.querySelector("div#ticket-counter").textContent = data[0]["capacity"] - data[0]["tickets_sold"]
     })
@@ -61,8 +61,8 @@ function ticketsPurchase() {
     let number = parseInt(currentListing.textContent)
     if(number >=1){
         currentListing.textContent = currentListing.textContent -1}
-        else {document.querySelector("button#ticketPurchase").textContent = "Sold Out"
-          alert("Sorry, No more tickets available!!")}
+        else {document.querySelector("button#ticketPurchase").textContent = "sold Out"
+          alert("tickets unavailable!")}
       }
       )
 }
