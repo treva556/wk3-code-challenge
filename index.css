@@ -1,0 +1,46 @@
+
+body {
+    background-color: aqua;
+}
+#imageHolder {
+    width: 250px;
+    height: 200px;
+    border-radius: 15px 50px 30px;
+
+}
+
+#sectionHeading {
+    font-size: 50px;
+    text-align: center;
+    color: blue;
+}
+#movieHead {
+    text-align: center;
+}
+
+#movieMenu {
+    margin-right: 50%;
+    align-items: center;
+    padding: 20px;
+    font-family: MS Gothic;
+}
+
+#movieSection {
+    align-items: center;
+    font-family: MS PGothic;
+    font-weight: bold;
+   margin-top: 30%;
+
+
+}
+
+#ticketsPurchase {
+    font-weight: bolder;
+    color: blue;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}

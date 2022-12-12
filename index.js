@@ -1,63 +1,70 @@
-document.addEventListener('DOMContentLoaded', () => {
-    getFilm()
 
-})
+const baseUrl = "http://localhost:3000/films";
 
-let url = "http://localhost:3000/films"
 
-//fetch request to get the films
-function getFilm(id) {
-    fetch(`${url}${id}`)
-    .then(res => res.json())
+function fetchData() {
+    fetch(baseUrl)
+    .then(respone => respone.json())
+    .then((data) => { 
+        data.forEach((films) =>{
+            let li = document.createElement("li");
+            li.textContent = films.title;
+            li.addEventListener("click", (e)=>{
+              let buttonContent =
+              document.querySelector("button#ticketsPurchase")
+              buttonContent.textContent = "Buy Tickets"
+                let title =
+             document.getElementById("movieTitle");
+                title.textContent =
+            films.title;
+            let img =
+            document.getElementById("imageHolder");
+               img.src =
+            films.poster;
+               let showTime =
+            document.getElementById("showTime");
+              showTime.textContent =
+            films.showtime;
+            let runTime =
+            document.getElementById("runTime");
+              runTime.textContent =
+            `${films.runtime} Minutes`;
+            let tickets =
+          document.querySelector("div#ticket-counter");
+                tickets.textContent = films["capacity"] - films["tickets_sold"]
+            })
+            document.querySelector("ul#films").appendChild(li)
+        })
+    })
+    }
+
+fetchData();
+
+function baseMovies() { fetch(baseUrl)
+    .then(respone => respone.json())
     .then(data => {
-        data.forEach(film => {
-            console.log(film);
-            displayAllFilms(film)
-        });
-    });
-    
-
-}
-
-
-
-// function that displays all films by their titles
-function displayAllFilms(film){
-    // characters.preventDefault()
-    console.log(film.title);
-    let title = document.createElement('p')
-    title.textContent = film.title
-    let main = document.getElementById("main")
-    main.append(title)
-    title.addEventListener('click', () =>{
-        getOneFilm(film)
+        document.querySelector('h2#movieTitle').textContent = data[0]['title']
+        document.querySelector("img#imageHolder").setAttribute("src",`${data[0]["poster"]}`)
+        document.querySelector("div#showTime").textContent = data[0]["showtime"]
+        document.querySelector("div#runTime").textContent = `${data[0]["runtime"]} Minutes`
+        document.querySelector("ul#films").firstElementChild.remove()
+        document.querySelector("div#ticket-counter").textContent = data[0]["capacity"] - data[0]["tickets_sold"]
     })
 }
 
-// function that displays information about a specific film
-function getOneFilm(film) {
-    document.getElementById("movietitle").textContent = film.title
-    document.getElementById("movieimg").src = film.poster
-    document.getElementById("runtime").textContent = "Runtime: " + film.runtime
-    document.getElementById("showtime").textContent = "Showtime: " + film.showtime
-   
-    let ticketNo = document.getElementById("ticketno")
-// tickets available would be film.capacity as a string minus film.tickets_sold
-let capacityNo= parseInt(film.capacity, 10)
-ticketNo.textContent = "Remaining Tickets: " + (capacityNo - film.tickets_sold)
+baseMovies();
 
-let btn = document.getElementById('tickets')
-btn.addEventListener('click', () => {
-   
-    if(ticketNo.textContent <= 0){
-        let btn1 = getElementById('soldout')
-        btn1.removeAttribute('hidden')
-        // btn.textContent = "Sold Out"
-    }else {
-         let sold = (film.tickets_sold+=1)
-         console.log(sold);
+function ticketsPurchase() {
+    let button = document.querySelector("button#ticketsPurchase")
+    button.addEventListener("click", () => {
+    let currentListing = document.querySelector("div#ticket-counter")
+    let number = parseInt(currentListing.textContent)
+    if(number >=1){
+        currentListing.textContent = currentListing.textContent -1}
+        else {document.querySelector("button#ticketPurchase").textContent = "Sold Out"
+          alert("Sorry, No more tickets available!!")}
+      }
+      )
+}
 
-    }
-
-})
-    }
+ticketsPurchase();
