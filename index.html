@@ -1,54 +1,43 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlatDango</title>
-    <link rel="stylesheet" href="./style.css">
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Film Project</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
 
-</head>
-<body>
-    <section id="sectionHeading"> 
-        <div id="headingSection">
-            <h1 id="sectionHeading">Flatiron Movie Theater</h1>
-           </div>
-    </section>
-   <div class="grid-container">
-    <section class="movieMenuSection">
-        <div id="menuSection">
-          <div id="movieMenu">
-              <h2 id="movieHead">Movies</h2>
-              <ul id="Movies">
-                  <li class="filmItem">Item List</li>
-              </ul>
-             </div>
+    <body>
+
+    
+        <nav class="navbar bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand nav-item text-light" id="navBar">FLATIDANGO</a>
+
+            </div>
+        </nav>
+
+        <div class="card col-8 px-2 mb-5 mt-5"id="div1" hidden>
+
+            
+            <h3 class="card-title"id="title" >Title</h3>
+            <img id="poster" src="./images/default.jpg"  width="200" height="200"></img>
+            <p class="card-text" id="runtime">Runtime</p>
+            <p class="card-text" id="showtime">Showtime</p>
+            <p id="ticketno">Remaining Tickets</p> 
+            <button id="Buy Ticket">Buy</button>
+    </div>
+  
+        <div class="container mt-5" id="main-container">
+          
+        
+            <div class="row" id="random-film">
+         
+            </div>
         </div>
-      </section>
-      <section class="movie--section">
-          <div id="movieSelected">
-              <div id="movieSection">
-                  <div id="movieDisplay">
-                      <h2 id="movieTitle" class="movie-title">Movie Title</h2>
-                      <img src="./img.jpeg" alt="An Image" id="imageHolder">
-      
-                  </div>
-                  <div id="showingTime" class="show-Time">SHOWING TIME: </div>
-                  <div id="runningTime" class="run-Time">RUNNING: </div>
-                  <div id="ticket-counter"></div>
-                  <div>Tickets Remaining</div>
-                  <button id="ticketsPurchase">
-                      Buy Tickets
-                  </button>
-              </div>
-          </div>
-      </section>
-   </div>
 
-    <script src="./script.js"></script>
-</body>
+
+        <script src="js/bootstrap.js"></script>
+        <script src="./js/script.js"></script>
+        </body>
 </html>
-
-
-

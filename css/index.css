@@ -1,0 +1,47 @@
+
+body{
+    background: linear-gradient(110deg, #04AA6D 60%, #fded3b 60%);
+
+
+}
+
+p{
+    cursor: pointer;
+     font-size: 17px;
+    text-align: left;
+    color: black
+   
+}
+#home-link{
+  cursor: pointer;
+}
+
+p:hover {
+    background-color: rgb(0, 153, 255);
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+ p:active {
+    background-color: #04AA6D;
+    color: white;
+ }
+h1, h2{
+    color: #4CAF50;
+    text-align: center;
+}
+h3{
+  text-align: center;
+}
+#div1{
+  float: right;
+}
+
+#poster{
+  object-fit: cover;
+
+}
+.card{
+  background: rgb(235, 228, 228);
+  border-radius: 15px;
+}
