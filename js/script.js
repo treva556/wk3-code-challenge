@@ -164,17 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
 
-
-
-
-  
-  
-// tickets available would be film.capacity string minus film.tickets_sold
-
    loadFilm()
   getFilm()
   loadTitles()
-//   getOneFilm()
 
 })
 
