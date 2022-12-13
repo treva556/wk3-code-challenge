@@ -31,18 +31,19 @@ Take on the process in Alternative One above.
 
 Remember to replace your username when cloning.
 
-git clone https://github.com/your-username-here/code_challenge_wk3
+git clone https://github.com/your-username-here/wk3-code-challenge
 
 # Running the application
 To run the application, you can use the following steps to run the app.
 
-# nstall required dependencies from npm
+# install required dependencies from npm
 npm install
 Run the application
 npm start
 # Brief challenge description
 
-
+this website is used by users to buy various movie tickets, check runtine and showtime and available ticket.
 # licence
-
+(ics licence)
 # authors
+Mark Trevor 
