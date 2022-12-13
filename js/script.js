@@ -1,3 +1,4 @@
+
 let url = "http://localhost:3000/films"
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -124,7 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let ticketRem = document.getElementById('ticketno')
             // tickets available would be film.capacity string minus film.tickets_sold
             let capacityConvert = parseInt(film.capacity, 10)
-            ticketRem.textContent = "Remaining Tickets: " + (capacityConvert - film.tickets_sold)
+            ticketRem.textContent = capacityConvert - film.tickets_sold
+
 
         }
 
@@ -142,6 +144,24 @@ document.addEventListener('DOMContentLoaded', () => {
         
     }
 
+
+
+    function ticketsPurchase() {
+      let button = document.querySelector("#Buy-Ticket")
+      button.addEventListener("click", () => {
+      let currentListing = document.querySelector("#ticketno")
+      let number = parseInt(currentListing.textContent)
+      console.log(currentListing.textContent)
+      if(number >=1){
+          currentListing.textContent = currentListing.textContent -1}
+          else {document.querySelector("#Buy-Ticket").textContent = "Sold Out"
+            alert("Sorry, No more tickets available!!")}
+        }
+        )
+  }
+  
+  ticketsPurchase();
+
   
 
 
@@ -157,6 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
 //   getOneFilm()
 
 })
+
+
+
 
 
 
