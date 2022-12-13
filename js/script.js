@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filmRuntime.classList.add('card-text')
         filmRuntime.textContent = runtime
 
-        const filmShowtime = document.createElement('p')
+        let filmShowtime = document.createElement('p')
         filmShowtime.classList.add('card-text')
         filmShowtime.textContent = showtime
 
