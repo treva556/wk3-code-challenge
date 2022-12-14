@@ -1,5 +1,5 @@
 
-let url = "https://wk3-code-challenge-phi.vercel.app/"
+let url = "https://wk3-code-challenge-phi.vercel.app/db.json"
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(url)
         .then((res) => res.json())
         .then((data) => {
-            let filmData = data[0]
+            let filmData = data.films[0]
             // console.log(filmData);
             let title = "Film Title : " + filmData.title
             let poster = filmData.poster
