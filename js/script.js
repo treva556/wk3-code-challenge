@@ -3,12 +3,12 @@ let url = "https://wk3-code-challenge-phi.vercel.app/"
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const FilmRow = document.getElementById('random-film')
-    const navBar = document.getElementById('navBar')
+    const movieRow = document.getElementById('random-film')
+    const navBar = document.getElementById('navigationBar')
 
     navBar.addEventListener('click', () => {
         // hide categories, search and countries
-        FilmRow.style.display = "flex"
+        movieRow.style.display = "flex"
     })
 
     const createFilm = (poster, title, runtime, showtime) => {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filmRuntime.classList.add('card-text')
         filmRuntime.textContent = runtime
 
-        const filmShowtime = document.createElement('p')
+        let filmShowtime = document.createElement('p')
         filmShowtime.classList.add('card-text')
         filmShowtime.textContent = showtime
 
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
            
 
             let filmElement = createFilm(poster, title, runtime, showtime)
-            FilmRow.appendChild(filmElement)
+            movieRow.appendChild(filmElement)
 
         })
     }
@@ -117,10 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function getOneFilm(film) {
-            document.getElementById("title").textContent = film.title
-            document.getElementById("poster").src = film.poster
-            document.getElementById("runtime").textContent = "Runtime: " + film.runtime + " Minutes"
-            document.getElementById("showtime").textContent = "Showtime: " + film.showtime
+            document.getElementById("Title").textContent = film.title
+            document.getElementById("Poster").src = film.poster
+            document.getElementById("Runtime").textContent = "Runtime: " + film.runtime + " Minutes"
+            document.getElementById("Showtime").textContent = "Showtime: " + film.showtime
 
             let ticketRem = document.getElementById('ticketno')
             // tickets available would be film.capacity string minus film.tickets_sold
@@ -136,10 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then((response) => response.json())
                 .then((data) => {
                     let titleNames = data
-                    let titleElems = titleNames.map(
-                        filmss => displayAllFilms(filmss.title)
+                    let titleElements = titleNames.map(
+                        fillms => displayAllFilms(fillms.title)
                     )
-                    FilmRow.append(...titleElems)
+                    movieRow.append(...titleElements)
                 })
         
     }
@@ -161,12 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   ticketsPurchase();
-
-  
-
-   loadFilm()
-  getFilm()
-  loadTitles()
+   loadFilm();
+  getFilm();
+  loadTitles();
 
 })
 
