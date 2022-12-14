@@ -1,5 +1,5 @@
 
-let url = "http://localhost:3000/films"
+let url = "https://wk3-code-challenge-phi.vercel.app/"
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(url)
             .then(res => res.json())
             .then(data => {
-                data.forEach(film => {
+                data.films.forEach(film => {
                     displayAllFilms(film)
                     // getOneFilm(film)
                 });
